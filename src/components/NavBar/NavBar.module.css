@@ -1,0 +1,94 @@
+/* NAV BAR STARTS HERE */
+
+.nav_bar {
+    height: fit-content;
+    width: 100%;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: var(--bg-dark-3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: var(--font2);
+    color: white;
+    text-align: center;
+}
+
+.nav_bar ul {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav_bar ul li {
+    padding: 0.3rem 0.4rem;
+}
+
+.nav_bar ul li:hover {
+    border-top: 2px solid white;
+}
+
+.nav_bar ul li a {
+    color: white;
+}
+
+.nav_bar ul li:nth-last-of-type(1) a {
+    padding: 0.5rem 1rem;
+    color: var(--bg-dark-3);
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.nav_hamburger {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    height: 2px;
+    width: 30px;
+    background-color: white;
+    z-index: 2;
+    display: none;
+}
+
+.nav_hamburger::before, .nav_hamburger::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px 0;
+    height: inherit;
+    width: inherit;
+    background-color: inherit;
+}
+
+.nav_hamburger::after {
+    margin: -10px 0;
+}
+
+.mobile_nav_bar ul {
+    display: none;
+}
+
+/* NAV BAR ENDS HERE */
+
+@media (max-width: 900px){
+    .nav_bar{
+        display: none;
+    }
+}
+
+.hide {
+    display: none;
+}
+

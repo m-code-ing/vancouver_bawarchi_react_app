@@ -1,0 +1,81 @@
+:root {
+  --font1: 'Crimson Text', serif;
+  --font2: 'Crimson Text', serif;
+  --font3: 'Crimson Text', serif;
+
+  --bg-dark-1: rgba(0, 0, 0, 0.3);
+  --bg-dark-2: rgba(0, 0, 0, 0.6);
+  --bg-dark-3: rgba(0, 0, 0, 0.9);
+
+  --bg-light-1: rgba(255, 255, 255, 0.3);
+  --bg-light-2: rgba(255, 255, 255, 0.6);
+  --bg-light-3: rgba(255, 255, 255, 0.9);
+  
+  --nav-bar-height: 10vh;
+
+  --clr-primary: burlywood;
+  --clr-secondary: blanchedalmond;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+  font-family: var(--font1);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  /* background-color: var(--bg-dark-1); */
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  width: 50%;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  display: block
+}
+
+ul, li {
+  list-style: none;
+}
+
+.spacer {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.h2-em{
+  font-size: 1.5em;
+}
+
+.hide {
+  display: none;
+}
+
