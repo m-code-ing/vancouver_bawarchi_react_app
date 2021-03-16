@@ -40,3 +40,11 @@
 .mobile_nav_bar a {
     color: white;
 }
+
+.hide{
+    display: none;
+}
+
+
+@media (max-width:901px){
+}

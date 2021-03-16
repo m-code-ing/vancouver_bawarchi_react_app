@@ -4,7 +4,6 @@ import Aux from '../../hoc/Auxillary/Auxillary'
 import classes from './NavBar.module.css'
 
 const NavBar = (props) => {
-
     return (
         <Aux>
             <nav className={classes.nav_bar}>
@@ -16,7 +15,7 @@ const NavBar = (props) => {
                     <li><a href="#">Food for Thought</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
-                <div className={classes.nav_hamburger}></div>
+                <div className={classes.nav_hamburger} onClick={props.mobileNavToggle}></div>
             </nav>
         </Aux>
     )

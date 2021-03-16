@@ -83,8 +83,12 @@
 /* NAV BAR ENDS HERE */
 
 @media (max-width: 900px){
-    .nav_bar{
+    .nav_bar ul{
         display: none;
+    }
+
+    .nav_hamburger {
+        display: inline;
     }
 }
 
