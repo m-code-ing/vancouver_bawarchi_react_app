@@ -1,7 +1,7 @@
 /* NAV BAR STARTS HERE */
 
 .nav_bar {
-    height: fit-content;
+    height: var(--nav-bar-height);
     width: 100%;
     padding: 1rem 2rem;
     position: fixed;
