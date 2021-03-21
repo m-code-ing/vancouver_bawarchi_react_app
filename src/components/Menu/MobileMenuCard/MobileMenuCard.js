@@ -15,12 +15,14 @@ export default function MenuCard(props) {
             setOrderQty(orderQty + 1);
         }else{
             alert('Maximum Order Qty Reached');
-        }        
+        }
+        props.cartQty(1);
     }
 
     const removeOrderQtyHandler = () => {
         if(orderQty>0){
             setOrderQty(orderQty - 1);
+            props.cartQty(-1);
         }
         else{
             alert('Order qty cannot be less than zero')

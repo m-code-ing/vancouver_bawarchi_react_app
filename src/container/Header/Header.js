@@ -15,7 +15,6 @@ class Header extends Component {
         this.setState((prevState) => {
             return { showMobileNav: !prevState.showMobileNav };
         });
-        console.log('x was clicked');
     }
 
     render() {
@@ -25,7 +24,7 @@ class Header extends Component {
                     <header>
                         {/* <!-- Navigation Bar --> */}
                         <NavBar mobileNavToggle={this.mobileNavToggle}></NavBar>
-                        <MobileNavBar open={this.state.showMobileNav} clicked={this.mobileNavToggle}></MobileNavBar>
+                        <MobileNavBar open={this.state.showMobileNav} clicked={this.mobileNavToggle}></MobileNavBar>                        
                         {/* <!-- Banner --> */}
                         <Banner></Banner>
                     </header>

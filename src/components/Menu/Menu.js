@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Aux from '../../hoc/Auxillary/Auxillary'
 import classes from './Menu.module.css';
 
 import MenuCard from './MenuCard/MenuCard';
 import MobileMenuCard from './MobileMenuCard/MobileMenuCard';
 
-export default function Menu() {
+export default function Menu(props) {
+
+    const [cartQty, setCartQty] = useState(0);
+
+    const orderQty = (qty) => {
+        setCartQty(cartQty + qty);
+        props.passCartQty(cartQty);
+    }
+
     let menuCard = (
         <MenuCard item_name="Veg Biryani"></MenuCard>
     )
     if (window.innerWidth <= 500) {
         menuCard = (
             <Aux>
-                <MobileMenuCard item_name="Veg Biryani"></MobileMenuCard>
-                <MobileMenuCard item_name="Chicken Biryani"></MobileMenuCard>
-                <MobileMenuCard item_name="Mutton Biryani"></MobileMenuCard>
+                <MobileMenuCard item_name="Veg Biryani" cartQty={orderQty}></MobileMenuCard>
+                <MobileMenuCard item_name="Chicken Biryani" cartQty={orderQty}></MobileMenuCard>
+                <MobileMenuCard item_name="Mutton Biryani" cartQty={orderQty}></MobileMenuCard>
             </Aux>
         )
     }

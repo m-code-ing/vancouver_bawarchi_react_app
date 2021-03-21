@@ -10,8 +10,6 @@ const mobileNavBar = (props) => {
         attachedClasses = [classes.mobile_nav_bar, classes.hide];
     }
     
-    console.log(props.open);
-
     return (
         <div className={attachedClasses.join(' ')}>
             <p className={classes.mobile_nav_bar_close} onClick={props.clicked}>X</p>
