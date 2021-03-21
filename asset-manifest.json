@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/vancouver_bawarchi_react_app/static/css/main.68d42f7d.chunk.css",
-    "main.js": "/vancouver_bawarchi_react_app/static/js/main.bb5170c2.chunk.js",
-    "main.js.map": "/vancouver_bawarchi_react_app/static/js/main.bb5170c2.chunk.js.map",
-    "runtime-main.js": "/vancouver_bawarchi_react_app/static/js/runtime-main.d94728be.js",
-    "runtime-main.js.map": "/vancouver_bawarchi_react_app/static/js/runtime-main.d94728be.js.map",
-    "static/js/2.f1470c84.chunk.js": "/vancouver_bawarchi_react_app/static/js/2.f1470c84.chunk.js",
-    "static/js/2.f1470c84.chunk.js.map": "/vancouver_bawarchi_react_app/static/js/2.f1470c84.chunk.js.map",
-    "static/js/3.77c7cd1b.chunk.js": "/vancouver_bawarchi_react_app/static/js/3.77c7cd1b.chunk.js",
-    "static/js/3.77c7cd1b.chunk.js.map": "/vancouver_bawarchi_react_app/static/js/3.77c7cd1b.chunk.js.map",
+    "main.css": "/vancouver_bawarchi_react_app/static/css/main.3b0c0122.chunk.css",
+    "main.js": "/vancouver_bawarchi_react_app/static/js/main.c2730088.chunk.js",
+    "main.js.map": "/vancouver_bawarchi_react_app/static/js/main.c2730088.chunk.js.map",
+    "runtime-main.js": "/vancouver_bawarchi_react_app/static/js/runtime-main.d9f0b6db.js",
+    "runtime-main.js.map": "/vancouver_bawarchi_react_app/static/js/runtime-main.d9f0b6db.js.map",
+    "static/js/2.7c8388e3.chunk.js": "/vancouver_bawarchi_react_app/static/js/2.7c8388e3.chunk.js",
+    "static/js/2.7c8388e3.chunk.js.map": "/vancouver_bawarchi_react_app/static/js/2.7c8388e3.chunk.js.map",
+    "static/js/3.10561fcd.chunk.js": "/vancouver_bawarchi_react_app/static/js/3.10561fcd.chunk.js",
+    "static/js/3.10561fcd.chunk.js.map": "/vancouver_bawarchi_react_app/static/js/3.10561fcd.chunk.js.map",
     "index.html": "/vancouver_bawarchi_react_app/index.html",
-    "static/css/main.68d42f7d.chunk.css.map": "/vancouver_bawarchi_react_app/static/css/main.68d42f7d.chunk.css.map",
-    "static/js/2.f1470c84.chunk.js.LICENSE.txt": "/vancouver_bawarchi_react_app/static/js/2.f1470c84.chunk.js.LICENSE.txt",
+    "static/css/main.3b0c0122.chunk.css.map": "/vancouver_bawarchi_react_app/static/css/main.3b0c0122.chunk.css.map",
+    "static/js/2.7c8388e3.chunk.js.LICENSE.txt": "/vancouver_bawarchi_react_app/static/js/2.7c8388e3.chunk.js.LICENSE.txt",
     "static/media/banner_img.16b5990c.jpg": "/vancouver_bawarchi_react_app/static/media/banner_img.16b5990c.jpg",
     "static/media/veg_biryani.8fda0afb.jpg": "/vancouver_bawarchi_react_app/static/media/veg_biryani.8fda0afb.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d94728be.js",
-    "static/js/2.f1470c84.chunk.js",
-    "static/css/main.68d42f7d.chunk.css",
-    "static/js/main.bb5170c2.chunk.js"
+    "static/js/runtime-main.d9f0b6db.js",
+    "static/js/2.7c8388e3.chunk.js",
+    "static/css/main.3b0c0122.chunk.css",
+    "static/js/main.c2730088.chunk.js"
   ]
 }
