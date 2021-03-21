@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/vancouver_bawarchi_react_app/static/css/main.3b0c0122.chunk.css",
+    "main.css": "/vancouver_bawarchi_react_app/static/css/main.ab4190b8.chunk.css",
     "main.js": "/vancouver_bawarchi_react_app/static/js/main.c2730088.chunk.js",
     "main.js.map": "/vancouver_bawarchi_react_app/static/js/main.c2730088.chunk.js.map",
     "runtime-main.js": "/vancouver_bawarchi_react_app/static/js/runtime-main.d9f0b6db.js",
@@ -10,7 +10,7 @@
     "static/js/3.10561fcd.chunk.js": "/vancouver_bawarchi_react_app/static/js/3.10561fcd.chunk.js",
     "static/js/3.10561fcd.chunk.js.map": "/vancouver_bawarchi_react_app/static/js/3.10561fcd.chunk.js.map",
     "index.html": "/vancouver_bawarchi_react_app/index.html",
-    "static/css/main.3b0c0122.chunk.css.map": "/vancouver_bawarchi_react_app/static/css/main.3b0c0122.chunk.css.map",
+    "static/css/main.ab4190b8.chunk.css.map": "/vancouver_bawarchi_react_app/static/css/main.ab4190b8.chunk.css.map",
     "static/js/2.7c8388e3.chunk.js.LICENSE.txt": "/vancouver_bawarchi_react_app/static/js/2.7c8388e3.chunk.js.LICENSE.txt",
     "static/media/banner_img.16b5990c.jpg": "/vancouver_bawarchi_react_app/static/media/banner_img.16b5990c.jpg",
     "static/media/veg_biryani.8fda0afb.jpg": "/vancouver_bawarchi_react_app/static/media/veg_biryani.8fda0afb.jpg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.d9f0b6db.js",
     "static/js/2.7c8388e3.chunk.js",
-    "static/css/main.3b0c0122.chunk.css",
+    "static/css/main.ab4190b8.chunk.css",
     "static/js/main.c2730088.chunk.js"
   ]
 }
