@@ -1,9 +1,11 @@
 .menu_card{
+    position: relative;
     height: fit-content;
     width: 40%;
     margin: 2rem;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .menu_card_left{

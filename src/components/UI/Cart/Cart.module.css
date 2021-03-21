@@ -1,11 +1,13 @@
 .Cart_container{
-    position: fixed;
-    bottom: 1vh;
-    right: 2vh;
     height: 7vh;
     width: 7vh;
     border-radius: 50%;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 1vh;
+    right: 2vh;
+    z-index: 100;
+    background-color: rosybrown;
 }
 
 .Center{
