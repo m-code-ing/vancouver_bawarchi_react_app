@@ -45,19 +45,19 @@
     padding: 1rem 0 ;
     text-align: center;
     color: white;
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: var(--font2);
 }
 
 .banner_heading_hr {
-    width: 30%;
+    width: 60%;
     border-top: 0.2rem solid white;
 }
 
 .banner_tagline {
     padding: 2rem 0;
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: var(--font1);
 }
 
@@ -82,6 +82,29 @@
     background-color: var(--bg-light-2);
     border: 1px solid rgba(0, 0, 0, 0.6);
     animation: glow-shadow 2s infinite ease;
+}
+
+/* Media Queries */
+
+@media (max-width: 900px){
+    .banner_heading{
+        font-size: 3.5rem;
+    }
+    .banner_tagline{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 400px){
+    .banner_heading{
+        font-size: 2rem;
+    }
+    .banner_tagline{
+        font-size: 1.5rem;
+    }
+    .banner_button{
+        font-size: 1.5rem;
+    }
 }
 
 /* BANNER ENDS HERE */

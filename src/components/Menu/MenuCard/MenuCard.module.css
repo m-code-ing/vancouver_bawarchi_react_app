@@ -1,0 +1,83 @@
+.menu_card{
+    height: fit-content;
+    width: 40%;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_card_left{
+    height: auto;
+    width: 33.33%;
+    padding: 2rem;
+    padding-right: 1rem;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: 1px solid black;
+    border-right: none;
+    /* background-color: var(--bg-dark-1); */
+}
+
+.menu_card_right{
+    height: auto;
+    width: 66.66%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-left: none;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    /* background-color: var(--clr-primary); */
+}
+.menu_card_right *{
+    /* color: var(--bg-light-3); */
+}
+
+.menu_card_left_img{
+    height: 25vh;
+    width: 25vh;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px var(--bg-light-3), -2px -2px 5px var(--bg-light-3);
+}
+
+.menu_item_title{
+    font-size: 2em;
+}
+
+.menu_item_description{
+    margin: 1rem 0;
+    font-size: 1.2em;
+    line-height: 0.9em;
+}
+
+.menu_item_order_div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.add_to_btn{
+    padding: 0.2em 0.6em;
+    color: black;
+    box-shadow: 2px 1px 4px black, -2px -1px 4px black;
+    border-radius: 2em;    
+    background-color: var(--bg-light-3);
+    
+}
+
+.menu_card_order_qty_div{
+    display: none;
+}
