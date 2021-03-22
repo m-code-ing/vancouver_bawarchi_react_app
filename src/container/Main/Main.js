@@ -9,7 +9,10 @@ export default function Main(props) {
     const [totalQty, setTotalQty] = useState(0);
 
     const passCartQty = (qty) => {
-        setTotalQty(qty);
+        console.log(qty);
+        setTotalQty(prevTotalQty => (
+            prevTotalQty = qty
+        ));
     }
     return (
         <Aux>

@@ -12,16 +12,20 @@ export default function MenuCard(props) {
 
     const addOrderQtyHandler = () => {
         if(orderQty<10){
-            setOrderQty(orderQty + 1);
+            setOrderQty(prevOrderQty => (
+                prevOrderQty + 1
+            ));
+            props.cartQty(1);
         }else{
             alert('Maximum Order Qty Reached');
         }
-        props.cartQty(1);
     }
 
     const removeOrderQtyHandler = () => {
         if(orderQty>0){
-            setOrderQty(orderQty - 1);
+            setOrderQty(prevOrderQty => (
+                prevOrderQty - 1
+            ));
             props.cartQty(-1);
         }
         else{
@@ -29,7 +33,6 @@ export default function MenuCard(props) {
         }
         
     }
-
 
     return (
         <Aux>

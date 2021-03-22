@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Aux from '../../hoc/Auxillary/Auxillary'
 import classes from './Menu.module.css';
 
@@ -10,9 +10,14 @@ export default function Menu(props) {
     const [cartQty, setCartQty] = useState(0);
 
     const orderQty = (qty) => {
-        setCartQty(cartQty + qty);
-        props.passCartQty(cartQty);
+        setCartQty((prevCartQty) => (
+            prevCartQty + qty
+        ));
     }
+
+    useEffect(() => {
+        props.passCartQty(cartQty);
+    }, [cartQty])
 
     let menuCard = (
         <MenuCard item_name="Veg Biryani"></MenuCard>
@@ -31,6 +36,7 @@ export default function Menu(props) {
             <div className={classes.menu_wrapper}>
                 <h2 className={classes.section_title}>Biryanis</h2>
                 <div className={classes.menu_container}>
+                    {cartQty}
                     {menuCard}
                 </div>
             </div>
