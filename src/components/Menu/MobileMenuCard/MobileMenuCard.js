@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Aux from '../../../hoc/Auxillary/Auxillary'
 
 import classes from './MobileMenuCard.module.css';
@@ -8,31 +8,37 @@ import imgVegBiryani from '../../../resources/images/veg_biryani.jpg';
 
 export default function MenuCard(props) {
 
-    const [orderQty, setOrderQty] = useState(0);
+    const [order, setOrder] = useState({item:props.item_name, qty: 0});
+
+    useEffect(()=>{
+        props.passOrder(order);
+    }
+    ,[order]);
 
     const addOrderQtyHandler = () => {
-        if(orderQty<10){
-            setOrderQty(prevOrderQty => (
-                prevOrderQty + 1
-            ));
-            props.cartQty(1);
+        if(order.qty<10){
+            setOrder(prevOrder => ({
+                ...prevOrder,
+                qty: prevOrder.qty + 1
+            }));
         }else{
             alert('Maximum Order Qty Reached');
         }
     }
 
     const removeOrderQtyHandler = () => {
-        if(orderQty>0){
-            setOrderQty(prevOrderQty => (
-                prevOrderQty - 1
-            ));
-            props.cartQty(-1);
+        if(order.qty>0){
+            setOrder(prevOrder => ({
+                ...prevOrder,
+                qty: prevOrder.qty - 1
+            }));
         }
         else{
             alert('Order qty cannot be less than zero')
         }
         
     }
+
 
     return (
         <Aux>
@@ -47,7 +53,7 @@ export default function MenuCard(props) {
                     <div className={classes.menu_item_order_div}>
                         <div className={classes.order_qty_div}>
                             <button className={classes.add_to_btn} onClick={removeOrderQtyHandler}>-</button>
-                            <p>{orderQty}</p>
+                            <p>{order.qty}</p>
                             <button className={classes.add_to_btn} onClick={addOrderQtyHandler}>+</button>
                         </div>
                         {/* <div className={classes.menu_card_order_qty_div}>
