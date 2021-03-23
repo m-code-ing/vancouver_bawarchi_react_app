@@ -10,6 +10,18 @@
     background-color: rosybrown;
 }
 
+.Cart_container2{
+    height: 4vh;
+    width: 100vw;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 1vh;
+    right: 0;
+    z-index: 100;
+    background-color: rosybrown;
+}
+
 .Center{
     position: absolute;
     top: 50%;

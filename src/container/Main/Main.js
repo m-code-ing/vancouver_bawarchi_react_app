@@ -3,7 +3,8 @@ import Aux from '../../hoc/Auxillary/Auxillary'
 import Menu from '../../components/Menu/Menu';
 
 import classes from './Main.module.css';
-import Cart from '../../components/UI/Cart/Cart';
+import CartQty from '../../components/Cart/CartQty/CartQty';
+import Cart from '../../components/Cart/Cart';
 
 export default function Main(props) {
     const [cartOrderList, setCartOrderList] = useState({});
@@ -13,7 +14,6 @@ export default function Main(props) {
     const passCartQty = (cartOrder) => {
         // console.log(cartOrder);
         setCartOrderList({...cartOrderList, ...cartOrder});
-        cart = (<Cart cartOrder={cartOrderList}></Cart>);
     }
 
     useEffect(() => {
@@ -24,7 +24,8 @@ export default function Main(props) {
         <Aux>
             {/* <!-- Menu Style 2 --> */}
             <Menu passCartQty={passCartQty}></Menu>
-            <Cart cartOrder={cartOrderList}></Cart>
+            <CartQty cartOrder={cartOrderList}></CartQty>
+            <Cart/>
         </Aux>
     )
 }
