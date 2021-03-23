@@ -9,58 +9,66 @@ import MobileMenuCard from './MobileMenuCard/MobileMenuCard';
 export default function Menu(props) {
 
     const [menuOrder, setMenuOrder] = useState({
-        vb: 0,
-        cb: 0,
-        mb: 0
+        'vb': 0,
+        'cb': 0,
+        'mb': 0
     });
 
-    const receiveOrderHandler = (order) => {
-        console.log('order : ', order);
-        const newOrder = {};
+    const handleRemoveItem = (item) => {
+        setMenuOrder(prevMenuOrder => {
+            if (menuOrder[item] < 0) {
+                alert('Item qty cannot be negative');
+            } else {
+                return {
+                    ...prevMenuOrder,
+                    [item]: prevMenuOrder[item] - 1
+                }
+            }
+        });
+    }
 
-        switch (order.item) {
-            case "Veg Biryani":
-                setMenuOrder(prevMenuOrder => {
-                    return {
-                        ...prevMenuOrder,
-                        vb: prevMenuOrder.vb + order.qty
-                    }
-                })
-                break;
-            case "Chicken Biryani":
-                setMenuOrder(prevMenuOrder => {
-                    return {
-                        ...prevMenuOrder,
-                        vb: prevMenuOrder.vb + order.qty
-                    }
-                })
-                break;
-            case "Mutton Biryani":
-                setMenuOrder(prevMenuOrder => {
-                    return {
-                        ...prevMenuOrder,
-                        vb: prevMenuOrder.vb + order.qty
-                    }
-                })
-                break;
-            default:
-                break;
-        }
+    const handleAddItem = (item) => {
+        setMenuOrder(prevMenuOrder => {
+            return {
+                ...prevMenuOrder,
+                [item]: prevMenuOrder[item] + 1
+            }
+
+        });
     }
 
     useEffect(() => {
-        console.log('menuOrder: ', menuOrder);
+        for (const key in menuOrder) {
+            if(menuOrder[key]<0){
+                setMenuOrder((prevMenuOrder) => {
+                    return{
+                        ...prevMenuOrder,
+                        [key]: 0
+                    }
+                });
+                alert('Order quantity cannot be less than zero');
+            }
+        }
+        props.passCartQty(menuOrder);
+        
     }, [menuOrder])
 
     let menuCard = (
         <MenuCard item_name="Veg Biryani"></MenuCard>
     )
     if (window.innerWidth <= 500) {
+        const menuItems = Object.keys(menuOrder).map((item, index) => {
+            let itemQty = menuOrder[item];
+            return <MobileMenuCard
+                key={index}
+                item_name={item}
+                qty={itemQty}
+                removeItem={handleRemoveItem}
+                addItem={handleAddItem}></MobileMenuCard>
+        });
         menuCard = (
             <Aux>
-                <MobileMenuCard item_name="Veg Biryani" passOrder={receiveOrderHandler}></MobileMenuCard>
-                <MobileMenuCard item_name="Chicken Biryani" passOrder={receiveOrderHandler}></MobileMenuCard>
-                <MobileMenuCard item_name="Mutton Biryani" passOrder={receiveOrderHandler}></MobileMenuCard>
+                {menuItems}
             </Aux>
         )
     }
