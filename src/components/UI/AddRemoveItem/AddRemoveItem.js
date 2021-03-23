@@ -6,9 +6,9 @@ export default function AddRemoveItem(props) {
     return (
         <div>
             <div className={classes.order_qty_div}>
-                <button className={classes.add_to_btn} onClick={() => props.removeItem(props.item_name)}>-</button>
+                <button className={classes.add_to_btn} onClick={() => props.removeItem(props.itemName)}>-</button>
                 <p className={classes.Order_qty}>{qty}</p>
-                <button className={classes.add_to_btn} onClick={() => props.addItem(props.item_name)}>+</button>
+                <button className={classes.add_to_btn} onClick={() => props.addItem(props.itemName)}>+</button>
             </div>
         </div>
     )

@@ -11,6 +11,7 @@ export default function Cart(props) {
     let itemPrice;
     let cartPrice = 0;
     let itemName;
+    
     const orderItems = Object.keys(props.cartOrder).map((item, index) => {
         if (cartOrder[item] > 0) {
             switch (item) {
@@ -18,28 +19,38 @@ export default function Cart(props) {
                     itemQty = cartOrder[item];
                     itemPrice = 13;
                     cartPrice = cartPrice + (itemPrice * itemQty);
-                    itemName = "Veg Biryani";
-                    return <CartItem itemName={itemName} itemQty={itemQty} itemPrice={itemPrice*itemQty}></CartItem>
+                    return <CartItem
+                        item={item}
+                        itemQty={itemQty}
+                        itemPrice={itemPrice * itemQty}
+                        removeItem={(cartItem) => props.removeItem(cartItem)}
+                        addItem={(cartItem) => props.addItem(cartItem)}></CartItem>
                 case 'cb':
                     itemQty = cartOrder[item];
                     itemPrice = 15;
                     cartPrice = cartPrice + (itemPrice * itemQty);
-                    itemName = "Chicken Biryani";
-                    return <CartItem itemName={itemName} itemQty={itemQty} itemPrice={itemPrice*itemQty}></CartItem>
+                    return <CartItem
+                        item={item}
+                        itemQty={itemQty}
+                        itemPrice={itemPrice * itemQty}
+                        removeItem={(cartItem) => props.removeItem(cartItem)}
+                        addItem={(cartItem) => props.addItem(cartItem)}></CartItem>
                 case 'mb':
                     itemQty = cartOrder[item];
                     itemPrice = 17;
                     cartPrice = cartPrice + (itemPrice * itemQty);
-                    itemName = "Mutton Biryani";
-                    return <CartItem itemName={itemName} itemQty={itemQty} itemPrice={itemPrice*itemQty}></CartItem>
+                    return <CartItem
+                        item={item}
+                        itemQty={itemQty}
+                        itemPrice={itemPrice * itemQty}
+                        removeItem={(cartItem) => props.removeItem(cartItem)}
+                        addItem={(cartItem) => props.addItem(cartItem)}></CartItem>
                 default:
                     break;
             }
         }
 
     });
-
-    console.log('orderItems : ', props.cartOrder);
 
     return (
         <Aux>
