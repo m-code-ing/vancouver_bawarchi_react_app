@@ -24,8 +24,8 @@ export default function Main(props) {
         <Aux>
             {/* <!-- Menu Style 2 --> */}
             <Menu passCartQty={passCartQty}></Menu>
-            <CartQty cartOrder={cartOrderList}></CartQty>
-            <Cart/>
+            <CartQty cartQty={cartOrderList}></CartQty>
+            <Cart cartOrder={cartOrderList}/>
         </Aux>
     )
 }

@@ -1,0 +1,19 @@
+.order_qty_div{
+    width: 40%;
+    display: flex;
+    align-items: baseline;
+    border-radius: 2rem;
+}
+.add_to_btn{
+    margin: 0 0.4rem;
+    color: black;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    appearance: none;    
+}
+
+.Order_qty{
+    padding: 0 0.3rem;
+    border: 1px solid rgba(150, 0, 0, 0.5);
+}
