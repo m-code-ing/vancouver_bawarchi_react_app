@@ -15,6 +15,47 @@
 
 .Cart_title{
     padding: 1rem;
+    margin: auto;
+}
+
+.Cart_price{
+    margin-left: auto;
+}
+
+.Place_order_div{
+    width: 100%;
+    display: flex;
+}
+
+.Place_order_btn{
+    width: fit-content;
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 0.3em;
+    color: seashell;
+    background-color: royalblue;
+}
+
+.Cancel_order_btn{
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin-left: auto;
+    font-size: 1rem;
+    appearance: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+}
+
+.Input_checkbox{
+    width: fit-content;
+    padding: 0 1rem;
+    display: flex;
+    align-items: baseline;
+    border: 1px solid black;
+}
+
+.Input_checkbox input{
+    margin: 0 1rem;
 }
 
 .Hide{

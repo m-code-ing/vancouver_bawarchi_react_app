@@ -14,7 +14,7 @@ export default function Cart(props) {
 
     let orderSummaryClasses = [classes.Cart_container];
     let itemSum = 0;
-    
+
     const orderItems = Object.keys(props.cartOrder).map((item, index) => {
         if (cartOrder[item] > 0) {
             itemSum = itemSum + cartOrder[item];
@@ -58,18 +58,22 @@ export default function Cart(props) {
         }
     });
 
-    if(props.orderSummaryState || itemSum <1){
+    if (props.orderSummaryState || itemSum < 1) {
         orderSummaryClasses.push(classes.Hide)
     }
 
     return (
         <Aux>
             <div className={orderSummaryClasses.join(' ')}>
-                <h3 className={classes.Cart_title}>Order Summary: </h3>
-                <p>Total Price : $ {cartPrice}</p>
+                <h3 className={classes.Cart_title}>Order Summary</h3>
+                <em className={classes.Cart_price}>Total Price : $ {cartPrice}</em>
                 <div>
                     {orderItems}
                 </div>
+                <div className={classes.Place_order_div}>
+                    <button className={classes.Place_order_btn}>Place Order</button>
+                </div>
+                <button className={classes.Cancel_order_btn}><em>Cancel Order</em></button>
             </div>
         </Aux>
     )

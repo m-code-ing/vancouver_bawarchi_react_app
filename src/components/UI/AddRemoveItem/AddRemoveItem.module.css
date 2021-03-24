@@ -1,16 +1,20 @@
+
 .order_qty_div{
     width: fit-content;
     display: flex;
     align-items: baseline;
     border-radius: 2rem;
+    font-size: 1.2rem;
 }
 .add_to_btn{
     margin: 0 0.4rem;
+    padding: 0 0.5rem;
     color: black;
     border: none;
     background-color: transparent;
     text-decoration: none;
-    appearance: none;    
+    appearance: none;
+    font-size: 1.2rem;
 }
 
 .Order_qty{

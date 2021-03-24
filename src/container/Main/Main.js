@@ -5,6 +5,7 @@ import Menu from '../../components/Menu/Menu';
 import classes from './Main.module.css';
 import CartQty from '../../components/Cart/CartQty/CartQty';
 import Cart from '../../components/Cart/Cart';
+import OrderForm from '../../components/OrderForm/OrderForm';
 
 export default function Main(props) {
     const [menuOrder, setMenuOrder] = useState({
@@ -87,6 +88,7 @@ export default function Main(props) {
                 orderSummaryState={orderSummaryState}
                 cancelItem={(orderItem) => removeItem(orderItem)} 
                 />
+            <OrderForm></OrderForm>
         </Aux>
     )
 }

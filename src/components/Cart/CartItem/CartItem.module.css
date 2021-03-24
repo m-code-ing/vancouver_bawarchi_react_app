@@ -37,3 +37,14 @@ button{
 .Remove_btn{
     color: rgba(0, 0, 0, 0.5);
 }
+
+.AddRemoveItem{
+    display: flex;
+    align-items: baseline;
+}
+
+.AddRemoveItem button{
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}

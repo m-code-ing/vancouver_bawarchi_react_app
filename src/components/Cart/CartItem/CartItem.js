@@ -35,14 +35,13 @@ export default function CartItem(props) {
                 <button 
                     className={classes.Remove_btn} 
                     onClick={() => props.cancelItem(props.item)}>Remove</button>
-                <div>
+                <div className={classes.AddRemoveItem}>
                     <p>Quantity: </p>
                     <AddRemoveItem
                         itemName={props.item_name}
                         qty={qty}
                         addItem={() => props.addItem(props.item)}
                         removeItem={() => props.removeItem(props.item)}
-                        // removeItem={() => removeItem(props.item)}
                     ></AddRemoveItem>
                 </div>
             </div>
