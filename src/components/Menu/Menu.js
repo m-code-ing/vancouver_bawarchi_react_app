@@ -8,7 +8,7 @@ import MobileMenuCard from './MobileMenuCard/MobileMenuCard';
 
 export default function Menu(props) {
     let menuCard;
-    
+
     if (window.innerWidth <= 500) {
         const menuItems = Object.keys(props.menuOrder).map((item, index) => {
             let itemQty = props.menuOrder[item];
@@ -17,7 +17,9 @@ export default function Menu(props) {
                 item_name={item}
                 qty={itemQty}
                 removeItem={(item) => props.removeItem(item)}
-                addItem={(item) => props.addItem(item)}></MobileMenuCard>
+                addItem={(item) => props.addItem(item)}
+            // addItem={(item) => addItem(item)}
+            ></MobileMenuCard>
         });
 
         menuCard = (
@@ -31,7 +33,6 @@ export default function Menu(props) {
             <div className={classes.menu_wrapper}>
                 <h2 className={classes.section_title}>Biryanis</h2>
                 <div className={classes.menu_container}>
-                    {/* {cartQty} */}
                     {menuCard}
                 </div>
             </div>

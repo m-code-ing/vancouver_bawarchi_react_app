@@ -7,15 +7,6 @@ import CartQty from '../../components/Cart/CartQty/CartQty';
 import Cart from '../../components/Cart/Cart';
 
 export default function Main(props) {
-    const [cartOrderList, setCartOrderList] = useState({});
-
-    let cart = '';
-
-    const passCartQty = (cartOrder) => {
-        // console.log(cartOrder);
-        setCartOrderList({ ...cartOrderList, ...cartOrder });
-    }
-
     const [menuOrder, setMenuOrder] = useState({
         'vb': 0,
         'cb': 0,
@@ -36,12 +27,13 @@ export default function Main(props) {
     }
 
     const handleAddItem = (item) => {
+        // console.log('From main.js : ', menuOrder);
+        // return;
         setMenuOrder(prevMenuOrder => {
             return {
                 ...prevMenuOrder,
                 [item]: prevMenuOrder[item] + 1
             }
-
         });
     }
 
@@ -57,23 +49,44 @@ export default function Main(props) {
                 alert('Order quantity cannot be less than zero');
             }
         }
-    }, [cartOrderList, menuOrder])
+    },[menuOrder])
+
+    const [orderSummaryState, setOrderSummaryState] = useState(true)
+
+    const toggleOrderSUmmary = () => {
+        setOrderSummaryState((prevOrderSummaryState) => !prevOrderSummaryState);
+    }
+
+    useEffect(() => {
+    }, [orderSummaryState])
+
+    const removeItem = (orderItem) => {
+        setMenuOrder(prevMenuOrder => {
+            return {
+                ...prevMenuOrder,
+                [orderItem]: 0
+            }            
+        })        
+    }
 
     return (
         <Aux>
             {/* <!-- Menu Style 2 --> */}
             <Menu
-                passCartQty={passCartQty}
                 menuOrder={menuOrder}
                 removeItem={(item) => handleRemoveItem(item)}
                 addItem={(item) => handleAddItem(item)}
             ></Menu>
-            <CartQty cartQty={menuOrder}></CartQty>
+            <CartQty
+                cartQty={menuOrder}
+                toggleOrderSummary={toggleOrderSUmmary}></CartQty>
             <Cart
                 cartOrder={menuOrder}
                 removeItem={(item) => handleRemoveItem(item)}
                 addItem={(item) => handleAddItem(item)}
-            />
+                orderSummaryState={orderSummaryState}
+                cancelItem={(orderItem) => removeItem(orderItem)} 
+                />
         </Aux>
     )
 }

@@ -25,10 +25,6 @@ export default function MenuCard(props) {
 
     const [order, setOrder] = useState({ item: props.item_name, qty: 0 });
 
-    // const removeItem = (item) => {
-    //     console.log("i was clicked");
-    //     console.log(item);
-    // }
     return (
         <Aux>
             <div className={classes.menu_card}>
@@ -41,13 +37,11 @@ export default function MenuCard(props) {
                                 Doloribus perferendis nostrum hic quae dolore natus odio assumenda repellendus qui ex?</p>
                     <div className={classes.menu_item_order_div}>
                         <div className={classes.order_qty_div}>
-                            {/* <button className={classes.add_to_btn} onClick={() => props.removeItem(props.item_name)}>-</button>
-                            <p>{props.qty}</p>
-                            <button className={classes.add_to_btn} onClick={() => props.addItem(props.item_name)}>+</button> */}
                             <AddRemoveItem
                                 itemName={props.item_name}
                                 qty={props.qty}
                                 addItem={(item) => props.addItem(item)}
+                                // addItem={(item) => addItem(item)}
                                 removeItem={(item) => props.removeItem(item)}
                             ></AddRemoveItem>
                         </div>

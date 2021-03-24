@@ -21,8 +21,8 @@ export default function CartItem(props) {
             break;
     }
 
-    const removeItem = (item) => {
-        console.log(item);
+    const cancelItem = (item) => {
+        console.log('item from cartitem.js : ', item);        
     }
 
     return (
@@ -32,7 +32,9 @@ export default function CartItem(props) {
                 <p>${props.itemPrice}</p>
             </div>
             <div className={classes.Item_qty_div}>
-                <button className={classes.Remove_btn}>Remove</button>
+                <button 
+                    className={classes.Remove_btn} 
+                    onClick={() => props.cancelItem(props.item)}>Remove</button>
                 <div>
                     <p>Quantity: </p>
                     <AddRemoveItem

@@ -11,9 +11,13 @@ export default function Cart(props) {
     let itemPrice;
     let cartPrice = 0;
     let itemName;
+
+    let orderSummaryClasses = [classes.Cart_container];
+    let itemSum = 0;
     
     const orderItems = Object.keys(props.cartOrder).map((item, index) => {
         if (cartOrder[item] > 0) {
+            itemSum = itemSum + cartOrder[item];
             switch (item) {
                 case 'vb':
                     itemQty = cartOrder[item];
@@ -24,7 +28,8 @@ export default function Cart(props) {
                         itemQty={itemQty}
                         itemPrice={itemPrice * itemQty}
                         removeItem={(cartItem) => props.removeItem(cartItem)}
-                        addItem={(cartItem) => props.addItem(cartItem)}></CartItem>
+                        addItem={(cartItem) => props.addItem(cartItem)}
+                        cancelItem={(item) => props.cancelItem(item)}></CartItem>
                 case 'cb':
                     itemQty = cartOrder[item];
                     itemPrice = 15;
@@ -34,7 +39,8 @@ export default function Cart(props) {
                         itemQty={itemQty}
                         itemPrice={itemPrice * itemQty}
                         removeItem={(cartItem) => props.removeItem(cartItem)}
-                        addItem={(cartItem) => props.addItem(cartItem)}></CartItem>
+                        addItem={(cartItem) => props.addItem(cartItem)}
+                        cancelItem={(item) => props.cancelItem(item)}></CartItem>
                 case 'mb':
                     itemQty = cartOrder[item];
                     itemPrice = 17;
@@ -44,17 +50,21 @@ export default function Cart(props) {
                         itemQty={itemQty}
                         itemPrice={itemPrice * itemQty}
                         removeItem={(cartItem) => props.removeItem(cartItem)}
-                        addItem={(cartItem) => props.addItem(cartItem)}></CartItem>
+                        addItem={(cartItem) => props.addItem(cartItem)}
+                        cancelItem={(item) => props.cancelItem(item)}></CartItem>
                 default:
                     break;
             }
         }
-
     });
+
+    if(props.orderSummaryState || itemSum <1){
+        orderSummaryClasses.push(classes.Hide)
+    }
 
     return (
         <Aux>
-            <div className={classes.Cart_container}>
+            <div className={orderSummaryClasses.join(' ')}>
                 <h3 className={classes.Cart_title}>Order Summary: </h3>
                 <p>Total Price : $ {cartPrice}</p>
                 <div>
