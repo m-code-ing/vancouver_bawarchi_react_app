@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Aux from '../../hoc/Auxillary/Auxillary'
 
 import classes from './Cart.module.css';
 import CartItem from './CartItem/CartItem';
 
+import { OrderContext } from '../../context/order_context'
+
 export default function Cart(props) {
 
+    const orderList = useContext(OrderContext).order;
     const cartOrder = props.cartOrder;
     let itemQty;
     let itemPrice;
@@ -15,39 +18,43 @@ export default function Cart(props) {
     let orderSummaryClasses = [classes.Cart_container];
     let itemSum = 0;
 
-    const orderItems = Object.keys(props.cartOrder).map((item, index) => {
-        if (cartOrder[item] > 0) {
-            itemSum = itemSum + cartOrder[item];
+    const orderItems = Object.keys(orderList).map((item, index) => {
+        if (orderList[item].qty > 0) {
+            itemSum = itemSum + orderList[item].qty;
             switch (item) {
                 case 'vb':
-                    itemQty = cartOrder[item];
-                    itemPrice = 13;
+                    itemQty = orderList[item].qty;
+                    itemPrice = orderList[item].price;
                     cartPrice = cartPrice + (itemPrice * itemQty);
                     return <CartItem
+                        key={index}
                         item={item}
-                        itemQty={itemQty}
+                        itemQty ={itemQty}
                         itemPrice={itemPrice * itemQty}
                         removeItem={(cartItem) => props.removeItem(cartItem)}
                         addItem={(cartItem) => props.addItem(cartItem)}
                         cancelItem={(item) => props.cancelItem(item)}></CartItem>
                 case 'cb':
-                    itemQty = cartOrder[item];
-                    itemPrice = 15;
+                    itemQty = orderList[item].qty;
+                    itemPrice = orderList[item].price;
                     cartPrice = cartPrice + (itemPrice * itemQty);
+                    console.log('itemQty : ', itemQty);
                     return <CartItem
+                        key={index}
                         item={item}
-                        itemQty={itemQty}
+                        itemQty ={itemQty}
                         itemPrice={itemPrice * itemQty}
                         removeItem={(cartItem) => props.removeItem(cartItem)}
                         addItem={(cartItem) => props.addItem(cartItem)}
                         cancelItem={(item) => props.cancelItem(item)}></CartItem>
                 case 'mb':
-                    itemQty = cartOrder[item];
-                    itemPrice = 17;
+                    itemQty = orderList[item].qty;
+                    itemPrice = orderList[item].price;
                     cartPrice = cartPrice + (itemPrice * itemQty);
                     return <CartItem
+                        key={index}
                         item={item}
-                        itemQty={itemQty}
+                        itemQty ={itemQty}
                         itemPrice={itemPrice * itemQty}
                         removeItem={(cartItem) => props.removeItem(cartItem)}
                         addItem={(cartItem) => props.addItem(cartItem)}

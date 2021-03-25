@@ -1,10 +1,27 @@
-import classes from './CartItem.module.css'
-import React from 'react'
+import React, { useContext } from 'react'
 import AddRemoveItem from '../../UI/AddRemoveItem/AddRemoveItem'
+import classes from './CartItem.module.css'
+
+import { OrderContext } from '../../../context/order_context'
 
 export default function CartItem(props) {
     let qty = props.itemQty;
 
+    const handleAddItem = useContext(OrderContext).addItem;
+    const handleRemoveItem = useContext(OrderContext).removeItem;
+    const handleCancelItem = useContext(OrderContext).cancelItem;
+
+    const addItem = (item) => {
+        handleAddItem((item));
+    }
+    const removeItem = (item) => {
+        handleRemoveItem((item));
+    }
+
+    const cancelItem = (item) => {
+        handleCancelItem(item)
+    }
+    
     let itemName = '';
     switch (props.item) {
         case 'vb':
@@ -21,10 +38,6 @@ export default function CartItem(props) {
             break;
     }
 
-    const cancelItem = (item) => {
-        console.log('item from cartitem.js : ', item);        
-    }
-
     return (
         <div className={classes.Item_container}>
             <div className={classes.Item_name_price_div}>
@@ -34,14 +47,14 @@ export default function CartItem(props) {
             <div className={classes.Item_qty_div}>
                 <button 
                     className={classes.Remove_btn} 
-                    onClick={() => props.cancelItem(props.item)}>Remove</button>
+                    onClick={() => cancelItem(props.item)}>Remove</button>
                 <div className={classes.AddRemoveItem}>
                     <p>Quantity: </p>
                     <AddRemoveItem
                         itemName={props.item_name}
                         qty={qty}
-                        addItem={() => props.addItem(props.item)}
-                        removeItem={() => props.removeItem(props.item)}
+                        addItem={() => addItem(props.item)}
+                        removeItem={() => removeItem(props.item)}
                     ></AddRemoveItem>
                 </div>
             </div>

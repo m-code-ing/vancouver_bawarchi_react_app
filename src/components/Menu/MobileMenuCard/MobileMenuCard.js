@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Aux from '../../../hoc/Auxillary/Auxillary'
 
 import classes from './MobileMenuCard.module.css';
@@ -6,8 +6,22 @@ import classes from './MobileMenuCard.module.css';
 // importing images
 import imgVegBiryani from '../../../resources/images/veg_biryani.jpg';
 import AddRemoveItem from '../../UI/AddRemoveItem/AddRemoveItem';
+import { OrderContext } from '../../../context/order_context'
 
 export default function MenuCard(props) {
+
+    // const orderList = useContext(OrderContext).order;
+    const handleAddItem = useContext(OrderContext).addItem;
+    const handleRemoveItem = useContext(OrderContext).removeItem;
+
+    const addItem = (item) => {
+        handleAddItem((item));
+    }
+    const removeItem = (item) => {
+        handleRemoveItem((item));
+    }
+    
+
     let itemName = '';
     switch (props.item_name) {
         case 'vb':
@@ -40,9 +54,11 @@ export default function MenuCard(props) {
                             <AddRemoveItem
                                 itemName={props.item_name}
                                 qty={props.qty}
-                                addItem={(item) => props.addItem(item)}
-                                // addItem={(item) => addItem(item)}
-                                removeItem={(item) => props.removeItem(item)}
+                                qty={props.qty}
+                                // addItem={(item) => props.addItem(item)}
+                                addItem={(item) => addItem(item)}
+                                // removeItem={(item) => props.removeItem(item)}
+                                removeItem={(item) => removeItem(item)}
                             ></AddRemoveItem>
                         </div>
                     </div>
