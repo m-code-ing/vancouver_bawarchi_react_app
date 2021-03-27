@@ -7,8 +7,11 @@ import CartQty from '../../components/Cart/CartQty/CartQty';
 import Cart from '../../components/Cart/Cart';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
+import { Route, Link } from 'react-router-dom';
+import CartItem from '../../components/Cart/CartItem/CartItem';
+
 export default function Main(props) {
-    
+
     const [menuOrder, setMenuOrder] = useState({
         'vb': 0,
         'cb': 0,
@@ -27,7 +30,7 @@ export default function Main(props) {
                 alert('Order quantity cannot be less than zero');
             }
         }
-    },[menuOrder])
+    }, [menuOrder])
 
     const [orderSummaryState, setOrderSummaryState] = useState(true)
 
@@ -40,22 +43,31 @@ export default function Main(props) {
 
     return (
         <Aux>
-            {/* <!-- Menu Style 2 --> */}
-            <Menu
+            {/* <!-- Menu Style 2 --> */}            
+            <Route path='/' exact component={Menu}></Route>
+            <Route path='/order-summary' component={Cart}></Route>
+            
+
+
+            {/* <Menu
                 menuOrder={menuOrder}
-                // removeItem={(item) => handleRemoveItem(item)}
-                // addItem={(item) => handleAddItem(item)}
-            ></Menu>
-            <CartQty
-                cartQty={menuOrder}
-                toggleOrderSummary={toggleOrderSUmmary}></CartQty>
-            <Cart
+            // removeItem={(item) => handleRemoveItem(item)}
+            // addItem={(item) => handleAddItem(item)}
+            ></Menu> */}
+
+            <Link to="/order-summary">
+                <CartQty
+                    cartQty={menuOrder}
+                    toggleOrderSummary={toggleOrderSUmmary}></CartQty>
+            </Link>
+
+            {/* <Cart
                 cartOrder={menuOrder}
                 // removeItem={(item) => handleRemoveItem(item)}
                 // addItem={(item) => handleAddItem(item)}
                 orderSummaryState={orderSummaryState}
                 // cancelItem={(orderItem) => removeItem(orderItem)} 
-                />
+                /> */}
             <OrderForm></OrderForm>
         </Aux>
     )
