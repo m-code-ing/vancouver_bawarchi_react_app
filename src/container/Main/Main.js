@@ -40,26 +40,26 @@ export default function Main(props) {
 
     useEffect(() => {
     }, [orderSummaryState])
+    
 
     return (
         <Aux>
             {/* <!-- Menu Style 2 --> */}            
             <Route path='/' exact component={Menu}></Route>
             <Route path='/order-summary' component={Cart}></Route>
+            <Route path='/order-form' component={OrderForm}></Route>
             
-
+            <Link to="/order-summary">
+                <CartQty
+                    cartQty={menuOrder}
+                    toggleOrderSummary={toggleOrderSUmmary}></CartQty>
+            </Link>
 
             {/* <Menu
                 menuOrder={menuOrder}
             // removeItem={(item) => handleRemoveItem(item)}
             // addItem={(item) => handleAddItem(item)}
             ></Menu> */}
-
-            <Link to="/order-summary">
-                <CartQty
-                    cartQty={menuOrder}
-                    toggleOrderSummary={toggleOrderSUmmary}></CartQty>
-            </Link>
 
             {/* <Cart
                 cartOrder={menuOrder}
@@ -68,7 +68,7 @@ export default function Main(props) {
                 orderSummaryState={orderSummaryState}
                 // cancelItem={(orderItem) => removeItem(orderItem)} 
                 /> */}
-            <OrderForm></OrderForm>
+            {/* <OrderForm></OrderForm> */}
         </Aux>
     )
 }

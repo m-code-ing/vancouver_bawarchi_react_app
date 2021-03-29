@@ -1,7 +1,16 @@
 .Form_container{
     width: 80%;
-    margin: auto;
+    margin: 6rem auto;
     padding: 1rem;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
+}
+
+.OrderForm_title{
+    text-align: center;
+}
+
+.OrderForm_button_div{
+    display: flex;
+    justify-content: space-evenly;
 }

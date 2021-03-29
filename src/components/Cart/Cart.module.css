@@ -1,7 +1,7 @@
 .Cart_container{
     width: 90vw;
     height: fit-content;
-    margin: auto;
+    margin: 6rem auto 0 auto;
     margin-bottom: 4rem;
     padding: 0 1rem 3rem 1rem;
     /* border: 1px solid rgba(0, 0, 0, 0.4); */

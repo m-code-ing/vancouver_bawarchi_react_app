@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import Aux from '../../hoc/Auxillary/Auxillary'
 
 import classes from './Cart.module.css';
 import CartItem from './CartItem/CartItem';
 
 import { OrderContext } from '../../context/order_context'
+import { Link } from 'react-router-dom';
 
 export default function Cart(props) {
 
@@ -69,18 +70,26 @@ export default function Cart(props) {
         orderSummaryClasses.push(classes.Hide)
     }
 
+    const myRef = useRef(null)
+
+    useEffect(() => {
+        console.log(myRef.current);
+        myRef.current.scrollIntoView(40);
+    },[])
+
     return (
         <Aux>
-            <div className={orderSummaryClasses.join(' ')}>
+            <div ref={myRef} className={orderSummaryClasses.join(' ')}>
                 <h3 className={classes.Cart_title}>Order Summary</h3>
                 <em className={classes.Cart_price}>Total Price : $ {cartPrice}</em>
                 <div>
                     {orderItems}
                 </div>
                 <div className={classes.Place_order_div}>
-                    <button className={classes.Place_order_btn}>Place Order</button>
+                    <Link to="/order-form" className={classes.Place_order_btn}>Place Order</Link>
+                    
                 </div>
-                <button className={classes.Cancel_order_btn}><em>Cancel Order</em></button>
+                <Link to="/" className={classes.Cancel_order_btn}><em>Cancel Order</em></Link>
             </div>
         </Aux>
     )
