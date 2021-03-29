@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vancouver_bawarchi_react_app/static/css/main.614cba46.chunk.css",
-    "main.js": "/vancouver_bawarchi_react_app/static/js/main.da90735a.chunk.js",
-    "main.js.map": "/vancouver_bawarchi_react_app/static/js/main.da90735a.chunk.js.map",
+    "main.js": "/vancouver_bawarchi_react_app/static/js/main.1f48874a.chunk.js",
+    "main.js.map": "/vancouver_bawarchi_react_app/static/js/main.1f48874a.chunk.js.map",
     "runtime-main.js": "/vancouver_bawarchi_react_app/static/js/runtime-main.1a04c419.js",
     "runtime-main.js.map": "/vancouver_bawarchi_react_app/static/js/runtime-main.1a04c419.js.map",
     "static/css/2.150d169a.chunk.css": "/vancouver_bawarchi_react_app/static/css/2.150d169a.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.d61f11cb.chunk.js",
     "static/css/main.614cba46.chunk.css",
-    "static/js/main.da90735a.chunk.js"
+    "static/js/main.1f48874a.chunk.js"
   ]
 }
