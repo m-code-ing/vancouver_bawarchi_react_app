@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export const OrderContext = React.createContext({
     order: {},
+    menuItems: {},
     handleRemoveItem: (item) => { },
     handleAddItem: (item) => { },
     handleCancelItem: (item) => { },
@@ -9,17 +10,26 @@ export const OrderContext = React.createContext({
 
 export default props => {
 
-    const [orderList, setOrderList] = useState({
+    const [menuItems, setMenuItems] = useState({
         vb: {
             price: 13,
-            qty: 0
         },
         cb: {
             price: 15,
-            qty: 0
         },
         mb: {
             price: 17,
+        }
+    })
+
+    const [orderList, setOrderList] = useState({
+        vb: {
+            qty: 0
+        },
+        cb: {
+            qty: 0
+        },
+        mb: {
             qty: 0
         }
     });
@@ -81,7 +91,8 @@ export default props => {
     return (
         <OrderContext.Provider value={
             {
-                order: orderList,
+                orderList: orderList,
+                menuItems: menuItems,
                 removeItem: handleRemoveItem,
                 addItem: handleAddItem,
                 cancelItem: handleCancelItem

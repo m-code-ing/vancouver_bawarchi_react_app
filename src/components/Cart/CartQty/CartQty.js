@@ -6,9 +6,10 @@ import { OrderContext } from '../../../context/order_context'
 import classes from './CartQty.module.css';
 
 export default function Cart(props) {
-    const orderList = useContext(OrderContext).order;
-    let cartQty = props.cartQty;
+    const orderList = useContext(OrderContext).orderList;
     let totalItems = 0;
+
+
     
     for (const key in orderList) {
         totalItems = totalItems + orderList[key].qty;

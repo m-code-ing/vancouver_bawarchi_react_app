@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 
 export default function Cart(props) {
 
-    const orderList = useContext(OrderContext).order;
+    const orderList = useContext(OrderContext).orderList;
+    const priceList = useContext(OrderContext).menuItems;
     const cartOrder = props.cartOrder;
     let itemQty;
     let itemPrice;
@@ -22,47 +23,37 @@ export default function Cart(props) {
     const orderItems = Object.keys(orderList).map((item, index) => {
         if (orderList[item].qty > 0) {
             itemSum = itemSum + orderList[item].qty;
-            switch (item) {
-                case 'vb':
-                    itemQty = orderList[item].qty;
-                    itemPrice = orderList[item].price;
-                    cartPrice = cartPrice + (itemPrice * itemQty);
-                    return <CartItem
-                        key={index}
-                        item={item}
-                        itemQty ={itemQty}
-                        itemPrice={itemPrice * itemQty}
-                        removeItem={(cartItem) => props.removeItem(cartItem)}
-                        addItem={(cartItem) => props.addItem(cartItem)}
-                        cancelItem={(item) => props.cancelItem(item)}></CartItem>
-                case 'cb':
-                    itemQty = orderList[item].qty;
-                    itemPrice = orderList[item].price;
-                    cartPrice = cartPrice + (itemPrice * itemQty);
-                    console.log('itemQty : ', itemQty);
-                    return <CartItem
-                        key={index}
-                        item={item}
-                        itemQty ={itemQty}
-                        itemPrice={itemPrice * itemQty}
-                        removeItem={(cartItem) => props.removeItem(cartItem)}
-                        addItem={(cartItem) => props.addItem(cartItem)}
-                        cancelItem={(item) => props.cancelItem(item)}></CartItem>
-                case 'mb':
-                    itemQty = orderList[item].qty;
-                    itemPrice = orderList[item].price;
-                    cartPrice = cartPrice + (itemPrice * itemQty);
-                    return <CartItem
-                        key={index}
-                        item={item}
-                        itemQty ={itemQty}
-                        itemPrice={itemPrice * itemQty}
-                        removeItem={(cartItem) => props.removeItem(cartItem)}
-                        addItem={(cartItem) => props.addItem(cartItem)}
-                        cancelItem={(item) => props.cancelItem(item)}></CartItem>
-                default:
-                    break;
-            }
+            itemQty = orderList[item].qty;
+            itemPrice = priceList[item].price;
+            cartPrice = cartPrice + (itemPrice * itemQty);
+            // switch (item) {
+            //     case 'vb':
+            //         itemQty = orderList[item].qty;
+            //         itemPrice = priceList[item].price;
+            //         cartPrice = cartPrice + (itemPrice * itemQty);
+            //         break;
+            //     case 'cb':
+            //         itemQty = orderList[item].qty;
+            //         itemPrice = orderList[item].price;
+            //         cartPrice = cartPrice + (itemPrice * itemQty);
+            //         console.log('itemQty : ', itemQty);
+            //         break;
+            //     case 'mb':
+            //         itemQty = orderList[item].qty;
+            //         itemPrice = orderList[item].price;
+            //         cartPrice = cartPrice + (itemPrice * itemQty);
+            //         break;
+            //     default:
+            //         break;
+            // }
+            return <CartItem
+                key={index}
+                item={item}
+                itemQty={itemQty}
+                itemPrice={itemPrice * itemQty}
+                removeItem={(cartItem) => props.removeItem(cartItem)}
+                addItem={(cartItem) => props.addItem(cartItem)}
+                cancelItem={(item) => props.cancelItem(item)}></CartItem>
         }
     });
 
@@ -73,9 +64,9 @@ export default function Cart(props) {
     const myRef = useRef(null)
 
     useEffect(() => {
-        console.log(myRef.current);
+        // console.log(myRef.current);
         myRef.current.scrollIntoView(40);
-    },[])
+    }, [])
 
     return (
         <Aux>
@@ -87,9 +78,9 @@ export default function Cart(props) {
                 </div>
                 <div className={classes.Place_order_div}>
                     <Link to="/order-form" className={classes.Place_order_btn}>Place Order</Link>
-                    
+
                 </div>
-                <Link to="/" className={classes.Cancel_order_btn}><em>Cancel Order</em></Link>
+                <Link to="/vancouver_bawarchi_react_app/" className={classes.Cancel_order_btn}><em>Cancel Order</em></Link>
             </div>
         </Aux>
     )

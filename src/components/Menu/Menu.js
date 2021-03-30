@@ -7,15 +7,14 @@ import MobileMenuCard from './MobileMenuCard/MobileMenuCard';
 import { OrderContext } from '../../context/order_context'
 
 export default function Menu(props) {
-    const orderList = useContext(OrderContext).order;
-
-    console.log(orderList);
+    const menuItems = useContext(OrderContext).menuItems;
+    const orderList = useContext(OrderContext).orderList;
 
     let menuCard;
 
     if (window.innerWidth <= 500) {
-        const menuItems = Object.keys(orderList).map((item, index) => {
-            // let itemQty = props.menuOrder[item];
+        
+        const menuList = Object.keys(menuItems).map((item, index) => {
             return <MobileMenuCard
                 key={index}
                 item_name={item}
@@ -27,7 +26,7 @@ export default function Menu(props) {
 
         menuCard = (
             <Aux>
-                {menuItems}
+                {menuList}
             </Aux>
         )
     }

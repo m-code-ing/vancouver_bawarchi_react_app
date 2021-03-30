@@ -13,7 +13,7 @@ const mobileNavBar = (props) => {
     return (
         <div className={attachedClasses.join(' ')}>
             <p className={classes.mobile_nav_bar_close} onClick={props.clicked}>X</p>
-            <h3 className={classes.logo}>Vancouver Bawarchi Mobile</h3>
+            <h3 className={classes.logo}>Vancouver Bawarchi</h3>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Menu</a></li>

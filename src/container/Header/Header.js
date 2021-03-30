@@ -12,9 +12,14 @@ class Header extends Component {
         showMobileNav: false
     };
     mobileNavToggle = () => {
+        // console.log('mobileNavToggle : ', this.state.showMobileNav);
         this.setState((prevState) => {
             return { showMobileNav: !prevState.showMobileNav };
         });
+    }
+
+    componentDidUpdate(){
+        console.log(this.state.showMobileNav);
     }
 
     render() {

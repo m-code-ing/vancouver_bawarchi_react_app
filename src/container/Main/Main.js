@@ -12,26 +12,6 @@ import CartItem from '../../components/Cart/CartItem/CartItem';
 
 export default function Main(props) {
 
-    const [menuOrder, setMenuOrder] = useState({
-        'vb': 0,
-        'cb': 0,
-        'mb': 0
-    });
-
-    useEffect(() => {
-        for (const key in menuOrder) {
-            if (menuOrder[key] < 0) {
-                setMenuOrder((prevMenuOrder) => {
-                    return {
-                        ...prevMenuOrder,
-                        [key]: 0
-                    }
-                });
-                alert('Order quantity cannot be less than zero');
-            }
-        }
-    }, [menuOrder])
-
     const [orderSummaryState, setOrderSummaryState] = useState(true)
 
     const toggleOrderSUmmary = () => {
@@ -44,31 +24,13 @@ export default function Main(props) {
 
     return (
         <Aux>
-            {/* <!-- Menu Style 2 --> */}            
-            <Route path='/' exact component={Menu}></Route>
-            <Route path='/order-summary' component={Cart}></Route>
-            <Route path='/order-form' component={OrderForm}></Route>
-            
             <Link to="/order-summary">
                 <CartQty
-                    cartQty={menuOrder}
                     toggleOrderSummary={toggleOrderSUmmary}></CartQty>
             </Link>
-
-            {/* <Menu
-                menuOrder={menuOrder}
-            // removeItem={(item) => handleRemoveItem(item)}
-            // addItem={(item) => handleAddItem(item)}
-            ></Menu> */}
-
-            {/* <Cart
-                cartOrder={menuOrder}
-                // removeItem={(item) => handleRemoveItem(item)}
-                // addItem={(item) => handleAddItem(item)}
-                orderSummaryState={orderSummaryState}
-                // cancelItem={(orderItem) => removeItem(orderItem)} 
-                /> */}
-            {/* <OrderForm></OrderForm> */}
+            <Route path='/vancouver_bawarchi_react_app/' exact component={Menu}></Route>
+            <Route path='/order-summary' component={Cart}></Route>
+            <Route path='/order-form' component={OrderForm}></Route>
         </Aux>
     )
 }

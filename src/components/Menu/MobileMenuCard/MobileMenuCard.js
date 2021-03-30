@@ -37,8 +37,6 @@ export default function MenuCard(props) {
             break;
     }
 
-    const [order, setOrder] = useState({ item: props.item_name, qty: 0 });
-
     return (
         <Aux>
             <div className={classes.menu_card}>
